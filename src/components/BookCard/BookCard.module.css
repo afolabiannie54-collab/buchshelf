@@ -1,0 +1,78 @@
+.bookcard {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  min-width: 150px;
+  max-width: 150px;
+  height: 95%;
+  max-height: 300px;
+  border: 1px solid var(--color-terracotta);
+  background-color: var(--color-ivory);
+  box-shadow: 0 2px 8px rgba(93, 64, 55, 0.12);
+  transition: box-shadow 0.3s ease;
+  contain: layout style paint;
+  cursor: pointer;
+}
+
+.bookcard:hover {
+  box-shadow: 0 0 20px rgba(255, 213, 128, 0.8),
+    0 4px 12px rgba(93, 64, 55, 0.2);
+}
+
+.bookcover {
+  height: 70%;
+  margin-bottom: 0.8rem;
+  flex-shrink: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.coverImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bookcard h3 {
+  margin: 0 0.5rem;
+  font-size: clamp(0.8rem, 2vw, 0.9rem);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 0 0.25rem;
+  color: var(--color-chocolate);
+}
+
+.bookcard p {
+  margin: 0.3rem 0.5rem 0.5rem;
+  font-size: clamp(0.7rem, 1.8vw, 0.8rem);
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 0 0.25rem;
+  color: var(--color-chocolate);
+}
+
+@media (max-width: 900px) {
+  .bookcard {
+    height: 100%;
+    min-width: 130px;
+  }
+
+  .bookcard h3 {
+    font-size: 0.85rem;
+  }
+
+  .bookcard p {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .bookcard {
+    min-width: 120px;
+  }
+}

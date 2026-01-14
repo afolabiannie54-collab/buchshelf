@@ -1,0 +1,197 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <!-- Gradients for depth -->
+    <linearGradient id="shelfGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5e3c;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#5d4037;stop-opacity:1" />
+    </linearGradient>
+    
+    <radialGradient id="lightGlow" cx="50%" cy="30%">
+      <stop offset="0%" style="stop-color:#fff5e1;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#fff5e1;stop-opacity:0" />
+    </radialGradient>
+
+    <!-- Book spine patterns -->
+    <pattern id="bookPattern1" x="0" y="0" width="4" height="4" patternUnits="userSpaceOnUse">
+      <rect width="4" height="4" fill="#f4a460" opacity="0.3"/>
+      <line x1="0" y1="0" x2="4" y2="4" stroke="#5d4037" stroke-width="0.5" opacity="0.2"/>
+    </pattern>
+  </defs>
+
+  <!-- Soft background with warm glow -->
+  <rect width="1200" height="800" fill="#fdfbf7"/>
+  <ellipse cx="600" cy="200" rx="600" ry="300" fill="url(#lightGlow)"/>
+
+  <!-- Top Shelf -->
+  <g id="shelf-top">
+    <!-- Shelf board -->
+    <rect x="50" y="180" width="1100" height="15" fill="url(#shelfGradient)" rx="2"/>
+    <rect x="50" y="195" width="1100" height="5" fill="#5d4037" opacity="0.3"/>
+    
+    <!-- Books on top shelf -->
+    <!-- Book 1 -->
+    <rect x="80" y="85" width="45" height="95" fill="#d46a6a" rx="2"/>
+    <rect x="82" y="87" width="41" height="91" fill="#c2674f" rx="1"/>
+    <line x1="90" y1="85" x2="90" y2="180" stroke="#5d4037" stroke-width="1" opacity="0.3"/>
+    <text x="102" y="135" font-family="Georgia, serif" font-size="10" fill="#fff5e1" transform="rotate(90 102 135)" opacity="0.9">Tales</text>
+    
+    <!-- Book 2 - leaning -->
+    <rect x="130" y="75" width="40" height="105" fill="#6b8e23" rx="2" transform="rotate(-8 150 130)"/>
+    <rect x="132" y="77" width="36" height="101" fill="#9caf88" rx="1" transform="rotate(-8 150 130)"/>
+    
+    <!-- Book 3 -->
+    <rect x="175" y="90" width="35" height="90" fill="#f4a460" rx="2"/>
+    <rect x="177" y="92" width="31" height="86" fill="#f5d5c8" rx="1"/>
+    <line x1="192" y1="90" x2="192" y2="180" stroke="#8b5e3c" stroke-width="0.8"/>
+    
+    <!-- Book 4 - thick -->
+    <rect x="215" y="70" width="55" height="110" fill="#5d4037" rx="2"/>
+    <rect x="217" y="72" width="51" height="106" fill="#8b5e3c" rx="1"/>
+    <rect x="220" y="75" width="45" height="8" fill="#f4a460" opacity="0.6"/>
+    
+    <!-- Book 5 -->
+    <rect x="275" y="95" width="42" height="85" fill="#c2674f" rx="2"/>
+    <rect x="277" y="97" width="38" height="81" fill="#d46a6a" rx="1"/>
+    
+    <!-- Book 6 -->
+    <rect x="322" y="88" width="38" height="92" fill="#9caf88" rx="2"/>
+    <rect x="324" y="90" width="34" height="88" fill="#6b8e23" rx="1"/>
+    <text x="342" y="135" font-family="Georgia, serif" font-size="9" fill="#fff5e1" transform="rotate(90 342 135)">Stories</text>
+    
+    <!-- Book 7 - small -->
+    <rect x="365" y="110" width="30" height="70" fill="#f5d5c8" rx="2"/>
+    <rect x="367" y="112" width="26" height="66" fill="#f4a460" rx="1"/>
+    
+    <!-- Plant pot -->
+    <ellipse cx="420" cy="178" rx="25" ry="8" fill="#8b5e3c"/>
+    <path d="M 395 178 Q 395 165, 410 155 Q 420 150, 430 155 Q 445 165, 445 178 Z" fill="#c2674f"/>
+    <circle cx="415" cy="140" r="15" fill="#6b8e23" opacity="0.7"/>
+    <circle cx="425" cy="135" r="18" fill="#9caf88" opacity="0.6"/>
+    <ellipse cx="420" cy="145" rx="20" ry="25" fill="#6b8e23"/>
+    <path d="M 410 145 Q 405 125, 415 115" stroke="#5d4037" stroke-width="2" fill="none" opacity="0.3"/>
+    
+    <!-- More books -->
+    <rect x="470" y="92" width="48" height="88" fill="#6b8e23" rx="2"/>
+    <rect x="523" y="85" width="40" height="95" fill="#d46a6a" rx="2"/>
+    <rect x="568" y="98" width="35" height="82" fill="#f4a460" rx="2"/>
+    <rect x="608" y="80" width="52" height="100" fill="#5d4037" rx="2"/>
+    <rect x="665" y="95" width="38" height="85" fill="#9caf88" rx="2"/>
+    <rect x="708" y="88" width="45" height="92" fill="#c2674f" rx="2"/>
+    <rect x="758" y="100" width="32" height="80" fill="#f5d5c8" rx="2"/>
+    
+    <!-- Stack of books lying down -->
+    <rect x="800" y="160" width="80" height="20" fill="#d46a6a" rx="2"/>
+    <rect x="805" y="140" width="75" height="20" fill="#6b8e23" rx="2"/>
+    <rect x="810" y="120" width="70" height="20" fill="#f4a460" rx="2"/>
+    
+    <!-- More standing books -->
+    <rect x="895" y="90" width="42" height="90" fill="#8b5e3c" rx="2"/>
+    <rect x="942" y="95" width="38" height="85" fill="#9caf88" rx="2"/>
+    <rect x="985" y="85" width="45" height="95" fill="#c2674f" rx="2"/>
+    <rect x="1035" y="92" width="40" height="88" fill="#6b8e23" rx="2"/>
+    <rect x="1080" y="88" width="50" height="92" fill="#f4a460" rx="2"/>
+  </g>
+
+  <!-- Middle Shelf -->
+  <g id="shelf-middle">
+    <!-- Shelf board -->
+    <rect x="50" y="380" width="1100" height="15" fill="url(#shelfGradient)" rx="2"/>
+    <rect x="50" y="395" width="1100" height="5" fill="#5d4037" opacity="0.3"/>
+    
+    <!-- Books on middle shelf -->
+    <rect x="75" y="290" width="50" height="90" fill="#f4a460" rx="2"/>
+    <rect x="130" y="285" width="45" height="95" fill="#6b8e23" rx="2"/>
+    <rect x="180" y="295" width="38" height="85" fill="#d46a6a" rx="2"/>
+    <rect x="223" y="280" width="55" height="100" fill="#5d4037" rx="2"/>
+    <rect x="283" y="292" width="42" height="88" fill="#9caf88" rx="2"/>
+    <rect x="330" y="288" width="40" height="92" fill="#c2674f" rx="2"/>
+    
+    <!-- Vintage lamp -->
+    <line x1="395" y1="380" x2="395" y2="260" stroke="#8b5e3c" stroke-width="3"/>
+    <ellipse cx="395" cy="255" rx="30" ry="15" fill="#f4a460" opacity="0.7"/>
+    <path d="M 375 255 Q 375 235, 395 225 Q 415 235, 415 255 Z" fill="#f5d5c8" opacity="0.8"/>
+    <circle cx="395" cy="230" r="8" fill="#fff5e1" opacity="0.9"/>
+    <ellipse cx="395" cy="380" rx="15" ry="5" fill="#5d4037"/>
+    
+    <!-- More books -->
+    <rect x="440" y="285" width="48" height="95" fill="#6b8e23" rx="2"/>
+    <rect x="493" y="292" width="40" height="88" fill="#f4a460" rx="2"/>
+    <rect x="538" y="280" width="52" height="100" fill="#c2674f" rx="2"/>
+    
+    <!-- Book leaning -->
+    <rect x="595" y="275" width="45" height="105" fill="#9caf88" rx="2" transform="rotate(12 617 330)"/>
+    
+    <rect x="650" y="290" width="42" height="90" fill="#d46a6a" rx="2"/>
+    <rect x="697" y="285" width="38" height="95" fill="#5d4037" rx="2"/>
+    <rect x="740" y="295" width="35" height="85" fill="#f5d5c8" rx="2"/>
+    <rect x="780" y="288" width="50" height="92" fill="#6b8e23" rx="2"/>
+    <rect x="835" y="292" width="45" height="88" fill="#f4a460" rx="2"/>
+    <rect x="885" y="285" width="40" height="95" fill="#c2674f" rx="2"/>
+    <rect x="930" y="290" width="48" height="90" fill="#9caf88" rx="2"/>
+    <rect x="983" y="280" width="52" height="100" fill="#6b8e3c" rx="2"/>
+    <rect x="1040" y="292" width="42" height="88" fill="#d46a6a" rx="2"/>
+    <rect x="1087" y="288" width="45" height="92" fill="#f4a460" rx="2"/>
+  </g>
+
+  <!-- Bottom Shelf -->
+  <g id="shelf-bottom">
+    <!-- Shelf board -->
+    <rect x="50" y="580" width="1100" height="15" fill="url(#shelfGradient)" rx="2"/>
+    <rect x="50" y="595" width="1100" height="5" fill="#5d4037" opacity="0.3"/>
+    
+    <!-- Books on bottom shelf -->
+    <rect x="70" y="485" width="52" height="95" fill="#5d4037" rx="2"/>
+    <rect x="127" y="490" width="45" height="90" fill="#6b8e23" rx="2"/>
+    <rect x="177" y="480" width="58" height="100" fill="#c2674f" rx="2"/>
+    <rect x="240" y="492" width="40" height="88" fill="#f4a460" rx="2"/>
+    <rect x="285" y="488" width="48" height="92" fill="#9caf88" rx="2"/>
+    <rect x="338" y="495" width="35" height="85" fill="#d46a6a" rx="2"/>
+    
+    <!-- Small decorative items -->
+    <circle cx="395" cy="560" r="20" fill="#f4a460" opacity="0.6"/>
+    <circle cx="395" cy="560" r="15" fill="#fff5e1" opacity="0.4"/>
+    <path d="M 395 545 L 390 555 L 400 555 Z" fill="#8b5e3c"/>
+    
+    <!-- More books -->
+    <rect x="435" y="488" width="50" height="92" fill="#6b8e23" rx="2"/>
+    <rect x="490" y="492" width="42" height="88" fill="#f5d5c8" rx="2"/>
+    <rect x="537" y="485" width="55" height="95" fill="#5d4037" rx="2"/>
+    <rect x="597" y="490" width="38" height="90" fill="#c2674f" rx="2"/>
+    <rect x="640" y="495" width="45" height="85" fill="#9caf88" rx="2"/>
+    <rect x="690" y="488" width="40" height="92" fill="#f4a460" rx="2"/>
+    <rect x="735" y="492" width="48" height="88" fill="#6b8e23" rx="2"/>
+    <rect x="788" y="485" width="52" height="95" fill="#d46a6a" rx="2"/>
+    
+    <!-- Stack lying down -->
+    <rect x="850" y="560" width="75" height="20" fill="#9caf88" rx="2"/>
+    <rect x="855" y="540" width="70" height="20" fill="#f4a460" rx="2"/>
+    
+    <rect x="940" y="488" width="45" height="92" fill="#c2674f" rx="2"/>
+    <rect x="990" y="490" width="50" height="90" fill="#6b8e23" rx="2"/>
+    <rect x="1045" y="485" width="42" height="95" fill="#f5d5c8" rx="2"/>
+    <rect x="1092" y="492" width="48" height="88" fill="#5d4037" rx="2"/>
+  </g>
+
+  <!-- Floating sparkles/dust particles for whimsy -->
+  <circle cx="200" cy="150" r="2" fill="#f4a460" opacity="0.6">
+    <animate attributeName="opacity" values="0.3;0.8;0.3" dur="3s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="450" cy="200" r="1.5" fill="#fff5e1" opacity="0.7">
+    <animate attributeName="opacity" values="0.4;0.9;0.4" dur="2.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="750" cy="180" r="2" fill="#f5d5c8" opacity="0.5">
+    <animate attributeName="opacity" values="0.2;0.7;0.2" dur="3.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="950" cy="220" r="1.5" fill="#f4a460" opacity="0.6">
+    <animate attributeName="opacity" values="0.3;0.8;0.3" dur="2.8s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="320" cy="400" r="2" fill="#fff5e1" opacity="0.6">
+    <animate attributeName="opacity" values="0.4;0.9;0.4" dur="3.2s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="680" cy="420" r="1.5" fill="#f4a460" opacity="0.5">
+    <animate attributeName="opacity" values="0.3;0.8;0.3" dur="2.6s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="1050" cy="380" r="2" fill="#f5d5c8" opacity="0.7">
+    <animate attributeName="opacity" values="0.2;0.7;0.2" dur="3s" repeatCount="indefinite"/>
+  </circle>
+</svg>

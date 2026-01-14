@@ -1,0 +1,20 @@
+.toast {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background: var(--color-sage);
+  color: var(--color-chocolate);
+  border: 2px solid var(--color-accent1);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-family: var(--font-secondary);
+  font-weight: 600;
+  box-shadow: 0 4px 16px rgba(93, 64, 55, 0.2);
+  transform: translateY(0);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.message {
+  line-height: 1;
+}

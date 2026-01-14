@@ -1,0 +1,89 @@
+/* Footer.module.css */
+.footer {
+  background: #f5d5c8c0;
+  padding: 3rem 2rem 1rem;
+
+  /* border-top: 3px solid var(--color-primary); */
+  box-shadow: 0 -1px 70px 5px rgba(255, 225, 166, 0.8);
+}
+
+.footerContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.footerSection h4 {
+  font-family: var(--font-secondary);
+  color: var(--color-chocolate);
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.logo {
+  height: 50px;
+  margin-bottom: 0.5rem;
+}
+
+.tagline {
+  font-family: var(--font-primary);
+  color: var(--color-primary);
+  font-size: 0.95rem;
+  font-style: italic;
+}
+
+.linkList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.linkList li {
+  margin-bottom: 0.7rem;
+}
+
+.linkList a {
+  font-family: var(--font-primary);
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.linkList a:hover {
+  color: var(--color-chocolate);
+  text-decoration: underline;
+}
+
+.socialIcons {
+  display: flex;
+  gap: 1rem;
+}
+
+.socialIcons a {
+  font-size: 1.5rem;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.socialIcons a:hover {
+  transform: translateY(-3px);
+}
+
+.footerBottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 1.5rem;
+  border-top: 2px solid rgba(139, 94, 60, 0.2);
+  text-align: center;
+}
+
+.footerBottom p {
+  font-family: var(--font-primary);
+  color: var(--color-primary);
+  font-size: 0.9rem;
+  margin: 0;
+}

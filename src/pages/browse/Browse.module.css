@@ -1,0 +1,241 @@
+.container {
+  /* padding: 2rem 2rem; */
+  min-height: 100vh;
+}
+
+.header {
+  /* max-width: 1200px; */
+  margin: 2rem;
+  text-align: center;
+}
+
+.header h1 {
+  font-size: clamp(2rem, 6vw, 3rem);
+  color: var(--color-chocolate);
+  font-family: var(--font-secondary);
+  margin: 0 0 0.5rem 0;
+  text-shadow: 2px 2px 8px rgba(253, 251, 247, 0.8);
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: var(--color-neutral);
+  margin: 0;
+  font-family: var(--font-primary);
+}
+
+/* Search Section */
+.searchSection {
+  max-width: 1000px;
+  margin: 0 auto 2rem;
+}
+
+/* Filter Panel - Top */
+.filterPanel {
+  /* max-width: 1200px; */
+  /* margin: 0 auto 2.5rem; */
+  background-color: var(--color-secondary);
+  padding: 1.5rem 2rem;
+  border-radius: 12px 12px 0 0;
+  border: 2px solid var(--color-peach);
+  border-bottom: none;
+}
+
+.filterHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.filterHeader h3 {
+  font-size: 1.5rem;
+  color: var(--color-primary);
+  margin: 0;
+  font-family: var(--font-other);
+  font-weight: 600;
+}
+
+.clearFiltersBtn {
+  background-color: var(--color-accent2);
+  color: var(--color-ivory);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: var(--font-secondary);
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(212, 106, 106, 0.2);
+}
+
+.clearFiltersBtn:hover {
+  background-color: #c2674f;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(212, 106, 106, 0.3);
+}
+
+.genreFilters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.genreCheckbox {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  font-size: 0.95rem;
+  color: var(--color-neutral);
+  user-select: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.6);
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  font-family: var(--font-primary);
+}
+
+.genreCheckbox input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: var(--color-accent1);
+  flex-shrink: 0;
+}
+
+.genreCheckbox:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-color: var(--color-accent1);
+  color: var(--color-chocolate);
+}
+
+/* Books Section */
+.booksSection {
+  background-color: var(--color-secondary);
+  padding: 2rem;
+}
+
+.booksGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.bookCardWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+/* Empty State */
+.emptyState {
+  text-align: center;
+  padding: 4rem 2rem;
+  background-color: var(--color-secondary);
+  border-radius: 12px;
+  /* border: 2px dashed var(--color-peach); */
+}
+
+.emptyState h2 {
+  font-size: 2rem;
+  color: var(--color-chocolate);
+  font-family: var(--font-secondary);
+  margin: 0 0 1rem 0;
+}
+
+.emptyState p {
+  font-size: 1rem;
+  color: var(--color-neutral);
+  margin: 0 0 1.5rem 0;
+  font-family: var(--font-primary);
+}
+
+.resetBtn {
+  padding: 0.75rem 1.5rem;
+  background-color: var(--color-accent1);
+  color: var(--color-ivory);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: var(--font-secondary);
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(93, 64, 55, 0.15);
+}
+
+.resetBtn:hover {
+  background-color: var(--color-accent2);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(93, 64, 55, 0.25);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 1.5rem 1rem;
+  }
+
+  .header h1 {
+    font-size: 1.75rem;
+  }
+
+  .filterPanel {
+    padding: 1.25rem 1.5rem;
+  }
+
+  .filterHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .genreFilters {
+    gap: 0.75rem;
+  }
+
+  .genreCheckbox {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.85rem;
+  }
+
+  .booksGrid {
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 1rem 0.75rem;
+  }
+
+  .header h1 {
+    font-size: 1.5rem;
+  }
+
+  .filterPanel {
+    padding: 1rem 1rem;
+    margin: 0 auto 1.5rem;
+  }
+
+  .genreFilters {
+    gap: 0.5rem;
+  }
+
+  .genreCheckbox {
+    padding: 0.35rem 0.6rem;
+    font-size: 0.8rem;
+  }
+
+  .booksGrid {
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    gap: 0.75rem;
+  }
+
+  .emptyState {
+    padding: 2rem 1rem;
+  }
+}

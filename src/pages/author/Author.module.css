@@ -1,0 +1,125 @@
+@import "../../styles/variables.css";
+
+.container {
+  /* padding: 2rem 2rem; */
+  min-height: 100vh;
+}
+
+.header {
+  max-width: 1200px;
+  margin: 0 auto 2rem;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.header h1 {
+  font-size: clamp(2rem, 6vw, 3rem);
+  color: var(--color-chocolate);
+  font-family: var(--font-secondary);
+  margin: 0 0 0.5rem 0;
+  text-shadow: 2px 2px 8px rgba(253, 251, 247, 0.8);
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: var(--color-neutral);
+  margin: 0;
+  font-family: var(--font-primary);
+}
+
+/* Bio Section */
+.bioSection {
+  max-width: 1000px;
+  margin: 0 auto 2.5rem;
+  background-color: var(--color-peach);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid var(--color-chocolate);
+}
+
+.bio {
+  font-size: 1.05rem;
+  color: var(--color-neutral);
+  margin: 0;
+  font-family: var(--font-primary);
+  line-height: 1.6;
+}
+
+/* Books Section */
+.booksSection {
+  background-color: var(--color-secondary);
+  padding: 2rem;
+}
+
+/* Error State */
+.errorState {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 60vh;
+  gap: 1.5rem;
+}
+
+.errorState h1 {
+  font-size: 2.5rem;
+  color: var(--color-chocolate);
+  font-family: var(--font-secondary);
+  margin: 0;
+}
+
+.errorState p {
+  font-size: 1.1rem;
+  color: var(--color-neutral);
+  margin: 0;
+  max-width: 500px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 1.5rem 1rem;
+  }
+
+  .header h1 {
+    font-size: 1.75rem;
+  }
+
+  .bioSection {
+    padding: 1.5rem;
+  }
+
+  .bio {
+    font-size: 1rem;
+  }
+
+  .backBtn {
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 1rem 0.75rem;
+  }
+
+  .header h1 {
+    font-size: 1.5rem;
+  }
+
+  .header {
+    margin-bottom: 1.5rem;
+  }
+
+  .bioSection {
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .backBtn {
+    width: 100%;
+    justify-content: center;
+    padding: 0.65rem 1rem;
+  }
+}

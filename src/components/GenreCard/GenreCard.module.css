@@ -1,0 +1,96 @@
+/* src/components/GenreCard/GenreCard.module.css */
+
+/* ===========================================
+   SIMPLE REUSABLE CARD (Genre list page)
+   =========================================== */
+
+.simpleCard {
+  width: 100%;
+  min-height: 180px;
+
+  border-radius: 18px;
+  padding: 1.5rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 4px 14px rgba(93, 64, 55, 0.15);
+  transition: transform 0.25s ease;
+  cursor: pointer;
+}
+
+.simpleCard:hover {
+  transform: translateY(-4px);
+}
+
+/* ===========================================
+   FAN-STACK CARD (Homepage)
+   =========================================== */
+
+.stackCard {
+  width: 250px;
+  height: 350px;
+  border-radius: 18px;
+
+  padding: 2rem;
+
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform-origin: center bottom;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 12px 24px rgba(93, 64, 55, 0.18);
+  transition: transform 0.45s ease, opacity 0.35s ease;
+  cursor: pointer;
+}
+
+.stackCard h3 {
+  font-family: var(--font-other);
+}
+
+/* FRONT CARD */
+.pos0 {
+  transform: translate(-50%, -50%) rotate(0deg) scale(1);
+  z-index: 30;
+  opacity: 1;
+}
+
+/* LEFT CARD */
+.pos1 {
+  transform: translate(-50%, -50%) rotate(-4deg) scale(0.93);
+  z-index: 20;
+  opacity: 0.75;
+}
+
+/* RIGHT CARD */
+.pos2 {
+  transform: translate(-50%, -50%) rotate(4deg) scale(0.93);
+  z-index: 20;
+  opacity: 0.75;
+}
+
+/* SHARED ICON + TEXT */
+.icon {
+  font-size: 2.8rem;
+}
+
+.name {
+  font-family: var(--font-secondary);
+  font-size: 1.5rem;
+  color: var(--color-ivory);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .stackCard {
+    width: 200px;
+    height: 280px;
+  }
+}

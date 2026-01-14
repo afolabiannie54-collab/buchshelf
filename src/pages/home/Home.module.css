@@ -1,0 +1,229 @@
+.hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.herotext {
+  position: relative;
+  text-transform: capitalize;
+  z-index: 2;
+  font-family: var(--font-secondary);
+  color: var(--color-chocolate);
+  font-size: clamp(2rem, 6vw, 3rem);
+
+  margin: 0;
+  text-shadow: 2px 2px 8px rgba(253, 251, 247, 0.8);
+}
+
+.herosubtext {
+  position: relative;
+  z-index: 2;
+  font-family: var(--font-primary);
+  color: var(--color-chocolate);
+  font-size: clamp(1rem, 3vw, 1.2rem);
+  text-shadow: 1px 1px 6px rgba(253, 251, 247, 0.7);
+}
+
+.herobtns {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.btn {
+  text-decoration: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  font-family: var(--font-secondary);
+
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(93, 64, 55, 0.15);
+}
+
+.primarybtn {
+  background-color: var(--color-terracotta);
+  color: var(--color-ivory);
+}
+
+.primarybtn:hover {
+  background-color: var(--color-accent2);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(93, 64, 55, 0.25);
+}
+
+.secondarybtn {
+  background-color: var(--color-amber);
+  color: var(--color-chocolate);
+}
+
+.secondarybtn:hover {
+  background-color: var(--color-peach);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(93, 64, 55, 0.25);
+}
+
+.FeaturedBooks {
+  height: fit-content;
+  background-color: var(--color-secondary);
+  padding: 2rem;
+  /* border: 2px solid red; */
+}
+
+.cta {
+  display: flex;
+  height: 80vh;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  background-color: var(--color-secondary);
+  flex-wrap: wrap;
+}
+
+.rows {
+  background-color: var(--color-secondary);
+  padding: 2rem;
+}
+
+.aboutTeaser {
+  position: relative;
+  min-height: 65vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 2rem;
+  background-image: url("../../assets/CozyBookshelfBackground.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  box-shadow: inset 0 10px 30px rgba(93, 64, 55, 0.15),
+    inset 0 -10px 30px rgba(93, 64, 55, 0.15);
+}
+
+/* Rich gradient overlay with depth */
+.aboutTeaser::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(253, 251, 247, 0.5) 0%,
+    rgba(255, 245, 225, 0.75) 30%,
+    rgba(245, 213, 200, 0.85) 70%,
+    rgba(139, 94, 60, 0.7) 100%
+  );
+  z-index: 1;
+}
+
+/* Additional vignette for depth */
+.aboutTeaser::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 0%,
+    transparent 40%,
+    rgba(93, 64, 55, 0.3) 100%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+.aboutContent {
+  position: relative;
+  z-index: 2;
+  max-width: 850px;
+  text-align: center;
+  padding: 3rem 2.5rem;
+}
+
+.aboutTitle {
+  font-family: var(--font-secondary);
+  color: var(--color-chocolate);
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  margin: 0 0 1.5rem;
+  font-weight: 600;
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.9),
+    0 4px 12px rgba(139, 94, 60, 0.15);
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.aboutText {
+  font-family: var(--font-primary);
+  color: var(--color-primary);
+  font-size: clamp(1.15rem, 2.5vw, 1.4rem);
+  line-height: 1.6;
+  margin: 0 0 2.5rem;
+  text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.95);
+  font-weight: 500;
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .aboutContent {
+    padding: 2.5rem 2rem;
+  }
+
+  .aboutTitle {
+    margin-bottom: 1.2rem;
+  }
+
+  .aboutText {
+    margin-bottom: 2rem;
+  }
+}
+/* Smooth blend into next section */
+.aboutTeaser + .rows {
+  margin-top: -2rem;
+  padding-top: 4rem;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 245, 225, 0.5) 0%,
+    var(--color-secondary) 20%
+  );
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .aboutTeaser {
+    min-height: 55vh;
+    padding: 3rem 1.5rem;
+  }
+}
+
+.cardshuffle {
+  height: 80%;
+  width: 50%;
+  border: 2px solid var(--color-accent1);
+}
+
+@media (max-width: 900px) {
+  .rows {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+}

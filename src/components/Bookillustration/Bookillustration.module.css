@@ -1,0 +1,307 @@
+/* BookIllustration.module.css */
+
+/* Paper Texture */
+.paperTexture {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.15;
+  background-image: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(139, 94, 60, 0.03) 2px,
+      rgba(139, 94, 60, 0.03) 4px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 2px,
+      rgba(139, 94, 60, 0.03) 2px,
+      rgba(139, 94, 60, 0.03) 4px
+    );
+  filter: contrast(120%) brightness(105%);
+  mix-blend-mode: multiply;
+}
+
+.paperTexture::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.08;
+}
+
+/* Floating Elements Container */
+.floatingContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.element {
+  position: absolute;
+  opacity: 0.25;
+  filter: drop-shadow(0 4px 8px rgba(139, 94, 60, 0.15));
+}
+
+.book1 {
+  top: 15%;
+  left: 10%;
+  animation: float1 12s ease-in-out infinite;
+}
+
+.book2 {
+  top: 25%;
+  right: 8%;
+  animation: float2 15s ease-in-out infinite;
+}
+
+.book3 {
+  bottom: 20%;
+  left: 12%;
+  animation: float3 13s ease-in-out infinite;
+}
+
+.bookmark1 {
+  top: 60%;
+  right: 15%;
+  animation: float1 10s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+.bookmark2 {
+  top: 35%;
+  left: 20%;
+  animation: float2 11s ease-in-out infinite;
+  animation-delay: 4s;
+}
+
+.heart {
+  bottom: 30%;
+  right: 20%;
+  animation: float3 14s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+.glasses {
+  top: 70%;
+  left: 25%;
+  animation: float1 16s ease-in-out infinite;
+  animation-delay: 3s;
+  transform: rotate(-15deg);
+}
+
+.cup {
+  bottom: 15%;
+  right: 12%;
+  animation: float2 13s ease-in-out infinite;
+  animation-delay: 5s;
+}
+
+@keyframes float1 {
+  0%,
+  100% {
+    transform: translateY(0px) translateX(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-20px) translateX(10px) rotate(5deg);
+  }
+  66% {
+    transform: translateY(-10px) translateX(-10px) rotate(-5deg);
+  }
+}
+
+@keyframes float2 {
+  0%,
+  100% {
+    transform: translateY(0px) translateX(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-15px) translateX(-15px) rotate(-8deg);
+  }
+  66% {
+    transform: translateY(-25px) translateX(10px) rotate(8deg);
+  }
+}
+
+@keyframes float3 {
+  0%,
+  100% {
+    transform: translateY(0px) translateX(0px);
+  }
+  50% {
+    transform: translateY(-30px) translateX(15px);
+  }
+}
+
+/* Animated Book */
+.bookContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 700px;
+  opacity: 0.4;
+  z-index: 0;
+  animation: bookFloat 6s ease-in-out infinite;
+}
+
+.book {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 10px 30px rgba(139, 94, 60, 0.2));
+}
+
+@keyframes bookFloat {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) translateY(0px);
+  }
+  50% {
+    transform: translate(-50%, -50%) translateY(-15px);
+  }
+}
+
+.page1 {
+  transform-origin: left center;
+  animation: pageFlip 8s ease-in-out infinite;
+  animation-delay: 0s;
+}
+
+.page2 {
+  transform-origin: left center;
+  animation: pageFlip 8s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+.page3 {
+  transform-origin: left center;
+  animation: pageFlip 8s ease-in-out infinite;
+  animation-delay: 4s;
+}
+
+.page4 {
+  transform-origin: left center;
+  animation: pageFlip 8s ease-in-out infinite;
+  animation-delay: 6s;
+}
+
+/* Replace the page flip animations with this simpler fade animation */
+
+.changingPage1,
+.changingPage2,
+.changingPage3,
+.changingPage4 {
+  transition: opacity 0.8s ease-in-out;
+}
+
+.changingPage1 {
+  animation: pageFade 12s ease-in-out infinite;
+  animation-delay: 0s;
+}
+
+.changingPage2 {
+  animation: pageFade 12s ease-in-out infinite;
+  animation-delay: 4s;
+}
+
+.changingPage3 {
+  animation: pageFade 12s ease-in-out infinite;
+  animation-delay: 8s;
+}
+
+.changingPage4 {
+  animation: pageFade 12s ease-in-out infinite;
+  animation-delay: 16s;
+}
+
+@keyframes pageFade {
+  0%,
+  20% {
+    opacity: 1;
+  }
+  25%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.leftPage1,
+.leftPage2,
+.leftPage3,
+.leftPage4 {
+  transition: opacity 0.6s ease-in-out;
+}
+
+.leftPage1 {
+  animation: pageFadeFast 8s ease-in-out infinite;
+  animation-delay: 0s;
+}
+
+.leftPage2 {
+  animation: pageFadeFast 8s ease-in-out infinite;
+  animation-delay: 3s;
+}
+
+.leftPage3 {
+  animation: pageFadeFast 8s ease-in-out infinite;
+  animation-delay: 6s;
+}
+
+.leftPage4 {
+  animation: pageFadeFast 8s ease-in-out infinite;
+  animation-delay: 9s;
+}
+
+/* Right page changes */
+.rightPage1,
+.rightPage2,
+.rightPage3,
+.rightPage4 {
+  transition: opacity 0.6s ease-in-out;
+}
+
+.rightPage1 {
+  animation: pageFadeFast 8s ease-in-out infinite;
+  animation-delay: 0s;
+}
+
+.rightPage2 {
+  animation: pageFadeFast 8s ease-in-out infinite;
+  animation-delay: 3s;
+}
+
+.rightPage3 {
+  animation: pageFadeFast 8s ease-in-out infinite;
+  animation-delay: 6s;
+}
+
+.rightPage4 {
+  animation: pageFadeFast 8s ease-in-out infinite;
+  animation-delay: 9s;
+}
+
+@keyframes pageFadeFast {
+  0%,
+  20% {
+    opacity: 1;
+  }
+  25%,
+  100% {
+    opacity: 0;
+  }
+}

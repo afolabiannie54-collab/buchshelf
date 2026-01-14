@@ -1,0 +1,61 @@
+.BookRow {
+  height: 60vh;
+  contain: layout style paint;
+}
+
+.BookRow h2 {
+  font-size: clamp(1.2rem, 4vw, 2rem);
+  margin: 0 0 1rem 0;
+  font-weight: 600;
+  font-family: var(--font-other);
+}
+
+.bookgrid {
+  display: flex;
+  text-align: center;
+  height: 70%;
+  gap: 20px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 0.5rem;
+  contain: layout style paint;
+}
+
+.bookgrid::-webkit-scrollbar {
+  display: none;
+}
+
+.bookgrid {
+  scrollbar-width: none;
+}
+
+@media (max-width: 900px) {
+  .BookRow {
+    height: 35vh;
+    margin-bottom: 1rem;
+  }
+
+  .bookgrid {
+    height: 85%;
+    gap: 15px;
+  }
+
+  .BookRow h2 {
+    font-size: clamp(1rem, 4vw, 1.5rem);
+
+    margin-bottom: 0.8rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .BookRow {
+    height: 30vh;
+    margin-bottom: 0;
+  }
+
+  .bookgrid {
+    gap: 12px;
+    /* padding-left: 0.5rem; */
+    /* padding-right: 0.5rem; */
+  }
+}

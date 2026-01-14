@@ -1,0 +1,141 @@
+/* * {
+  border: 2px solid red !important;
+} */
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  /* background-color: #fff5e1; */
+  height: 5vh;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: transparent;
+  transition: all 0.3s ease;
+}
+
+.nav.scrolled {
+  background-color: rgba(253, 251, 247, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid rgba(253, 251, 247, 0.3);
+}
+
+.nav img { 
+  height: 40px;
+}
+
+.nav .links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.navLink {
+  font-family: var(--font-primary);
+  text-decoration: none;
+  color: var(--color-neutral);
+  font-weight: 700;
+  font-size: 1.1rem;
+  position: relative;
+  transition: all 0.3s ease;
+  padding-bottom: 0.25rem;
+}
+
+.navLink::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-accent1);
+  transition: width 0.3s ease;
+}
+
+.navLink:hover::after {
+  width: 100%;
+}
+
+.navLink.activeLink {
+  color: var(--color-accent1);
+}
+
+.navLink.activeLink::after {
+  width: 100%;
+}
+
+.nav .icons {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.iconLink {
+  display: flex;
+  align-items: center;
+  color: var(--color-neutral);
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.iconLink:hover {
+  color: var(--color-accent1);
+}
+
+.iconLink.activeIcon {
+  color: var(--color-accent1);
+}
+
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  color: #333;
+}
+
+@media (max-width: 900px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav .links {
+    position: absolute;
+    z-index: 2;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: var(--color-secondary);
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .navLink {
+    padding: 1rem 2rem;
+    border-bottom: 1px solid #eee;
+    display: block;
+  }
+
+  .navLink::after {
+    display: none;
+  }
+
+  .navLink.activeLink {
+    background-color: rgba(107, 142, 35, 0.1);
+    border-left: 4px solid var(--color-accent1);
+    padding-left: calc(2rem - 4px);
+  }
+
+  /* Show links when active */
+  .nav .links.active {
+    max-height: 300px;
+  }
+}

@@ -1,0 +1,18 @@
+:root {
+  --font-primary: "Lato", sans-serif;
+  --font-secondary: "Quicksand", sans-serif;
+  --font-other: "Nunito", sans-serif;
+
+  --color-primary: #8b5e3c; /* Warm Brown - main elements, headers */
+  --color-secondary: #f7ead7; /* Soft Cream - backgrounds, whitespace */
+  --color-accent1: #6b8e23; /* Olive Green - highlights/buttons/icons */
+  --color-accent2: #d46a6a; /* Muted Rust - subtle attention elements */
+  --color-neutral: #2c2c2c; /* Dark Charcoal - text & subtle lines */
+
+  --color-chocolate: #5d4037; /* Deep Chocolate Brown - depth & richness */
+  --color-amber: #f4a460; /* Warm Amber - magical touches, highlights */
+  --color-sage: #9caf88; /* Soft Sage Green - calm accents */
+  --color-terracotta: #c2674f; /* Warm Terracotta - warmer than the rust */
+  --color-ivory: #fdfbf7; /* Warm Ivory - lighter contrast */
+  --color-peach: #f5d5c8; /* Soft Peach - gentle warmth */
+}
