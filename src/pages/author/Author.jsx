@@ -44,9 +44,11 @@ export default function AuthorPage() {
 
         // If strict filtering removes everything, fall back to less strict filtering
         if (normalized.length === 0) {
-          console.warn(
-            "Strict filtering removed all books, using less strict filtering"
-          );
+          if (import.meta.env.DEV) {
+            console.warn(
+              "Strict filtering removed all books, using less strict filtering"
+            );
+          }
           normalized = normalizeBooks(results);
         }
 
@@ -56,7 +58,7 @@ export default function AuthorPage() {
           sortedByRating.length > 0 ? sortedByRating : normalized.slice(0, 40)
         );
       } catch (err) {
-        console.error("Error loading author books:", err);
+        if (import.meta.env.DEV) console.error("Error loading author books:", err);
         setError(err.message);
         setAuthorBooks([]);
       } finally {

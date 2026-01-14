@@ -82,13 +82,13 @@ export default function Footer() {
         <div className={styles.footerSection}>
           <h4>Connect</h4>
           <div className={styles.socialIcons}>
-            <a href="#" aria-label="Twitter" rel="noopener">
+            <a href="#" aria-label="Twitter" rel="noopener noreferrer">
               <FaTwitter />
             </a>
-            <a href="#" aria-label="Instagram" rel="noopener">
+            <a href="#" aria-label="Instagram" rel="noopener noreferrer">
               <FaInstagram />
             </a>
-            <a href="#" aria-label="GitHub" rel="noopener">
+            <a href="#" aria-label="GitHub" rel="noopener noreferrer">
               <FaGithub />
             </a>
           </div>

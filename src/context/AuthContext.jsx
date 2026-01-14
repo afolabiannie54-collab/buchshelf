@@ -12,7 +12,10 @@ export function AuthProvider({ children }) {
       try {
         return JSON.parse(storedAccounts);
       } catch (error) {
-        console.error("Failed to load accounts from localStorage:", error);
+        // Silently fail in production
+        if (import.meta.env.DEV) {
+          console.error("Failed to load accounts from localStorage:", error);
+        }
         return [];
       }
     }
@@ -31,7 +34,10 @@ export function AuthProvider({ children }) {
       try {
         return JSON.parse(storedUser);
       } catch (error) {
-        console.error("Failed to load user from localStorage:", error);
+        // Silently fail in production
+        if (import.meta.env.DEV) {
+          console.error("Failed to load user from localStorage:", error);
+        }
         return null;
       }
     }

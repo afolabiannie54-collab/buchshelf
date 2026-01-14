@@ -96,7 +96,7 @@ export default function Home() {
         setBiographyMemoirBooks(normalizeAndEnrichBooks(biographyMemoir));
         setCrimeThrillerBooks(normalizeAndEnrichBooks(crimeThriller));
       } catch (error) {
-        console.error("Error loading books:", error);
+        if (import.meta.env.DEV) console.error("Error loading books:", error);
       } finally {
         setIsLoading(false);
       }

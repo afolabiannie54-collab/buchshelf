@@ -28,7 +28,7 @@ export function LibraryProvider({ children }) {
       try {
         return JSON.parse(storedLibrary);
       } catch (error) {
-        console.error("Failed to load library from localStorage:", error);
+        if (import.meta.env.DEV) console.error("Failed to load library from localStorage:", error);
         return {
           "want-to-read": [],
           "currently-reading": [],
@@ -50,7 +50,7 @@ export function LibraryProvider({ children }) {
       try {
         return JSON.parse(storedFavorites);
       } catch (error) {
-        console.error("Failed to load favorites from localStorage:", error);
+        if (import.meta.env.DEV) console.error("Failed to load favorites from localStorage:", error);
         return [];
       }
     }
@@ -64,7 +64,7 @@ export function LibraryProvider({ children }) {
       try {
         return JSON.parse(storedGoals);
       } catch (error) {
-        console.error("Failed to load goals from localStorage:", error);
+        if (import.meta.env.DEV) console.error("Failed to load goals from localStorage:", error);
         return {};
       }
     }
@@ -78,7 +78,7 @@ export function LibraryProvider({ children }) {
       try {
         setLibrary(JSON.parse(storedLibrary));
       } catch (error) {
-        console.error("Failed to load library from localStorage:", error);
+        if (import.meta.env.DEV) console.error("Failed to load library from localStorage:", error);
         setLibrary({
           "want-to-read": [],
           "currently-reading": [],
@@ -98,7 +98,7 @@ export function LibraryProvider({ children }) {
       try {
         setFavorites(JSON.parse(storedFavorites));
       } catch (error) {
-        console.error("Failed to load favorites from localStorage:", error);
+        if (import.meta.env.DEV) console.error("Failed to load favorites from localStorage:", error);
         setFavorites([]);
       }
     } else {
@@ -110,7 +110,7 @@ export function LibraryProvider({ children }) {
       try {
         setGoalsByYear(JSON.parse(storedGoals));
       } catch (error) {
-        console.error("Failed to load goals from localStorage:", error);
+        if (import.meta.env.DEV) console.error("Failed to load goals from localStorage:", error);
         setGoalsByYear({});
       }
     } else {
