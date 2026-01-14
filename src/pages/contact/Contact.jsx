@@ -51,6 +51,7 @@ export default function ContactPage() {
             value={name}
             onChange={(e) => setName(e.target.value)}
             aria-invalid={!!errors.name}
+            autoComplete="name"
           />
           {errors.name && <span className={styles.error}>{errors.name}</span>}
         </label>
@@ -62,6 +63,7 @@ export default function ContactPage() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             aria-invalid={!!errors.email}
+            autoComplete="email"
           />
           {errors.email && <span className={styles.error}>{errors.email}</span>}
         </label>

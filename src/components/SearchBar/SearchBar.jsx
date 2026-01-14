@@ -25,6 +25,7 @@ export default function SearchBar({
           onChange={handleChange}
           placeholder={placeholder}
           className={styles.input}
+          autoComplete="off"
         />
         {value && (
           <button

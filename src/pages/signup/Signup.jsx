@@ -63,6 +63,7 @@ export default function SignupPage() {
                 errors.email ? styles.invalid : ""
               }`}
               aria-invalid={!!errors.email}
+              autoComplete="email"
             />
             {errors.email && (
               <span className={styles.errorText}>{errors.email}</span>
@@ -81,6 +82,7 @@ export default function SignupPage() {
                 errors.username ? styles.invalid : ""
               }`}
               aria-invalid={!!errors.username}
+              autoComplete="username"
             />
             {errors.username && (
               <span className={styles.errorText}>{errors.username}</span>
@@ -99,6 +101,7 @@ export default function SignupPage() {
                 errors.password ? styles.invalid : ""
               }`}
               aria-invalid={!!errors.password}
+              autoComplete="new-password"
             />
             {errors.password && (
               <span className={styles.errorText}>{errors.password}</span>
@@ -117,6 +120,7 @@ export default function SignupPage() {
                 errors.confirmPassword ? styles.invalid : ""
               }`}
               aria-invalid={!!errors.confirmPassword}
+              autoComplete="new-password"
             />
             {errors.confirmPassword && (
               <span className={styles.errorText}>{errors.confirmPassword}</span>

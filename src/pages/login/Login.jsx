@@ -54,6 +54,7 @@ export default function LoginPage() {
                 errors.email ? styles.invalid : ""
               }`}
               aria-invalid={!!errors.email}
+              autoComplete="email"
             />
             {errors.email && (
               <span className={styles.errorText}>{errors.email}</span>
@@ -72,6 +73,7 @@ export default function LoginPage() {
                 errors.password ? styles.invalid : ""
               }`}
               aria-invalid={!!errors.password}
+              autoComplete="current-password"
             />
             {errors.password && (
               <span className={styles.errorText}>{errors.password}</span>
