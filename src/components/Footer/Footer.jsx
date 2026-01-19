@@ -24,7 +24,7 @@ export default function Footer() {
             alt="Buchshelf logo"
             className={styles.logo}
             width="64"
-            height="32"
+            height="48"
           />
           <p className={styles.tagline}>Your cozy corner for book tracking</p>
         </div>
