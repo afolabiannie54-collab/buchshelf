@@ -262,10 +262,14 @@ export default function Home() {
   );
 }
 
+
 function Hero({ isLoggedIn, user }) {
   return (
     <section className={styles.hero}>
+     
       <BookIllustration />
+      
+     
       <h1 className={styles.herotext}>
         {isLoggedIn
           ? `Hello, ${user?.username || "Reader"}! The books missed you.`
@@ -276,7 +280,9 @@ function Hero({ isLoggedIn, user }) {
           ? "The shelves have something new for you, dive back in!"
           : "A warm, quiet space to track your books and discover new ones."}
       </p>
-      {!isLoggedIn && (
+      
+     
+      {!isLoggedIn ? (
         <div className={styles.herobtns}>
           <Link to="/login" className={`${styles.primarybtn} ${styles.btn}`}>
             Get Started
@@ -284,6 +290,12 @@ function Hero({ isLoggedIn, user }) {
           <Link to="/signup" className={`${styles.secondarybtn} ${styles.btn}`}>
             Create Your Shelf
           </Link>
+        </div>
+      ) : (
+        <div className={styles.herohints}>
+          <span className={styles.hint}>Track your reading</span>
+          {/* <span className={styles.hint}>Discover new favorites</span> */}
+          <span className={styles.hint}>Build your collection</span>
         </div>
       )}
     </section>

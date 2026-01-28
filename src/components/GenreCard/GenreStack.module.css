@@ -1,16 +1,41 @@
 .genreStack {
   padding: 6rem 2rem;
-  /* background-color: var(--color-secondary); */
+  background: linear-gradient(
+    135deg,
+    var(--color-secondary) 0%,
+    var(--color-ivory) 50%,
+    var(--color-peach) 100%
+  );
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative element */
+.genreStack::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background: radial-gradient(
+    ellipse at top right,
+    rgba(156, 175, 136, 0.15) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 0;
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
-
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  gap: 5rem;
   align-items: center;
+  position: relative;
+  z-index: 1;
 }
 
 .stackWrapper {
@@ -21,45 +46,56 @@
 .content {
   display: flex;
   flex-direction: column;
+  gap: 1.5rem;
 }
 
 .title {
   font-family: var(--font-secondary);
-  font-size: 3rem;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
   color: var(--color-chocolate);
   margin: 0;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
 }
 
 .description {
   font-family: var(--font-primary);
-  font-size: 1.125rem;
+  font-size: clamp(1.1rem, 2.5vw, 1.25rem);
   color: var(--color-neutral);
+  line-height: 1.7;
+  margin: 0;
+  max-width: 500px;
 }
 
 .viewBtn {
   text-decoration: none;
   cursor: pointer;
   width: fit-content;
-
-  padding: 12px 24px;
+  padding: 12px 28px;
   border-radius: 8px;
   background-color: var(--color-accent1);
   color: var(--color-ivory);
-
   font-family: var(--font-secondary);
   font-weight: 600;
-
+  font-size: 1rem;
   box-shadow: 0 4px 12px rgba(93, 64, 55, 0.15);
   transition: all 0.3s ease;
+  border: 2px solid transparent;
 }
 
 .viewBtn:hover {
-  background-color: var(--color-accent2);
+  background-color: var(--color-sage);
   transform: translateY(-2px);
   box-shadow: 0 6px 18px rgba(93, 64, 55, 0.25);
+  border-color: var(--color-accent1);
 }
 
 @media (max-width: 968px) {
+  .genreStack {
+    padding: 5rem 1.5rem;
+  }
+
   .container {
     grid-template-columns: 1fr;
     gap: 4rem;
@@ -77,6 +113,30 @@
   }
 
   .title {
-    font-size: 2.25rem;
+    font-size: clamp(2rem, 7vw, 2.8rem);
+  }
+
+  .description {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .genreStack {
+    padding: 4rem 1rem;
+  }
+
+  .stackWrapper {
+    height: 320px;
+  }
+
+  .container {
+    gap: 3rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .viewBtn {
+    transition: none;
   }
 }

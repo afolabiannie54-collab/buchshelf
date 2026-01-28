@@ -36,10 +36,7 @@ button {
 body {
   width: 100%;
   height: fit-content;
-  background: linear-gradient(135deg, #f5d5c8, #e8b59d, #fce0d1, #ea9b8d);
-  background-size: 150% 150%;
-  animation: gradientShift 25s ease infinite;
-  will-change: background-position;
+  background-color: var(--color-secondary);
 }
 
 /* subtle shifting animation */

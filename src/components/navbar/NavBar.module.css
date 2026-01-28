@@ -7,13 +7,13 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  /* background-color: #fff5e1; */
   height: 5vh;
   position: sticky;
   top: 0;
   z-index: 100;
-  background-color: transparent;
+  background-color: var(--color-secondary);
   transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(93, 64, 55, 0.08);
 }
 
 .nav.scrolled {
@@ -138,4 +138,17 @@
   .nav .links.active {
     max-height: 300px;
   }
+}
+
+/* Screen reader only text */
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }
