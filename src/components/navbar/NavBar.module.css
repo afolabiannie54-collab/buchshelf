@@ -14,6 +14,7 @@
   background-color: var(--color-secondary);
   transition: all 0.3s ease;
   box-shadow: 0 2px 8px rgba(93, 64, 55, 0.08);
+  border-bottom: 1.5px solid var(--color-accent1);
 }
 
 .nav.scrolled {
@@ -22,6 +23,7 @@
   -webkit-backdrop-filter: blur(10px);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
   border-bottom: 1px solid rgba(253, 251, 247, 0.3);
+   border-bottom: 1.5px solid var(--color-accent1);
 }
 
 .nav img { 

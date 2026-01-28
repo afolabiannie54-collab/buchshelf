@@ -106,7 +106,7 @@ export default function Home() {
   }, []);
 
   // Create skeleton arrays for loading
-  const skeletonArray = Array(8).fill(null);
+  const skeletonArray = Array(20).fill(null);
 
   return (
     <div>

@@ -8,6 +8,7 @@
   padding: 4rem 2rem;
   text-align: center;
   background-color: var(--color-secondary);
+  z-index: 10; /* Ensure hero content appears above BookIllustration */
 }
 
 /* Hero text (KEEP – safe & important to you) */
@@ -33,10 +34,12 @@
 
 /* Buttons */
 .herobtns {
+  position: relative;
   display: flex;
   gap: 1.25rem;
   justify-content: center;
   flex-wrap: wrap;
+  z-index: 11; /* Ensure buttons are clickable above all decorative elements */
 }
 
 /* Logged-in hints (KEEP visuals, simplify cost) */
@@ -78,6 +81,7 @@
 }
 
 .primarybtn:hover {
+  background-color: var(--color-accent2);
   transform: translateY(-2px);
   box-shadow: 0 6px 14px rgba(93, 64, 55, 0.25);
 }
@@ -88,6 +92,7 @@
 }
 
 .secondarybtn:hover {
+  background-color: var(--color-peach);
   transform: translateY(-2px);
   box-shadow: 0 6px 14px rgba(93, 64, 55, 0.25);
 }

@@ -10,9 +10,9 @@
   align-items: center;
   gap: 0.75rem;
   padding: 0.875rem 1.25rem;
-  border: 1px solid var(--color-chocolate);
+  border: 1.5px solid var(--color-chocolate);
   border-radius: 8px;
-  background-color: #fff9ed;
+  background-color: var(--color-ivory);
   transition: all 0.3s ease;
   box-shadow: 0 2px 4px rgba(93, 64, 55, 0.08);
 }

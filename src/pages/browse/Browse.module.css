@@ -16,11 +16,11 @@
 }
 
 .header h1 {
-  font-size: clamp(2.5rem, 6vw, 3.5rem);
+  font-size: clamp(2.4rem, 6vw, 3.6rem);
   color: var(--color-chocolate);
   font-family: var(--font-secondary);
   margin: 0 0 0.75rem 0;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: -0.02em;
   text-shadow: 2px 2px 4px rgba(93, 64, 55, 0.08);
 }
@@ -185,9 +185,10 @@
 
 /* Books Section */
 .booksSection {
+   border-top: 1.5px solid var(--color-accent1);
   background-color: var(--color-ivory);
   padding: 3rem 2rem;
-  border-top: 1px solid rgba(93, 64, 55, 0.1);
+  /* border-top: 1px solid rgba(93, 64, 55, 0.1); */
 }
 
 .booksGrid {

@@ -4,7 +4,7 @@
   align-items: center;
   min-height: 85vh;
   padding: 2rem;
-  /* background: linear-gradient(135deg, var(--color-secondary) 0%, #f9f3e6 100%); */
+  background: linear-gradient(135deg, var(--color-ivory) 0%, rgba(247, 234, 215, 0.5) 100%);
 }
 
 .card {
@@ -15,6 +15,7 @@
   width: 100%;
   box-shadow: 0 8px 32px rgba(93, 64, 55, 0.1);
   position: relative;
+  border: 2px solid var(--color-terracotta);
 }
 
 .title {
@@ -27,7 +28,7 @@
 
 .subtitle {
   font-size: 0.95rem;
-  color: #999;
+  color: var(--color-primary);
   margin: 0 0 2rem 0;
   font-family: var(--font-primary);
 }
@@ -54,48 +55,56 @@
 
 .input {
   padding: 0.75rem 0.9rem;
-  border: 2px solid var(--color-peach);
+  border: 2px solid var(--color-amber);
   border-radius: 8px;
   font-size: 1rem;
   font-family: var(--font-primary);
   background: var(--color-ivory);
-  transition: border-color 0.2s, box-shadow 0.2s;
+  transition: all 0.3s ease;
   width: calc(100% + 16px);
-  margin: 0 -8px; /* slight overlap beyond card edges */
+  margin: 0 -8px;
+  box-shadow: 0 2px 8px rgba(244, 164, 96, 0.1);
 }
 
 .input:focus {
   outline: none;
-  border-color: var(--color-accent2);
-  box-shadow: 0 6px 14px rgba(93, 64, 55, 0.12);
+  border-color: var(--color-terracotta);
+  box-shadow: 0 0 0 4px rgba(194, 103, 79, 0.2), 0 6px 14px rgba(93, 64, 55, 0.12);
+  transform: translateY(-2px);
 }
 
 .invalid {
   border-color: #e74c3c;
 }
 
+.invalid:focus {
+  box-shadow: 0 0 0 4px rgba(231, 76, 60, 0.2);
+}
+
 .errorText {
   color: #e74c3c;
   font-size: 0.85rem;
   margin-top: 4px;
+  font-family: var(--font-primary);
+  font-weight: 600;
 }
 
 .submitBtn {
   padding: 0.875rem;
-  background-color: var(--color-terracotta);
-  color: white;
+  background: linear-gradient(135deg, var(--color-terracotta) 0%, var(--color-accent2) 100%);
+  color: var(--color-ivory);
   border: none;
   border-radius: 6px;
   font-size: 1rem;
   font-weight: 600;
   font-family: var(--font-secondary);
   cursor: pointer;
-  transition: all 0.3s;
+  transition: all 0.3s ease;
   box-shadow: 0 4px 12px rgba(194, 103, 79, 0.2);
 }
 
 .submitBtn:hover {
-  background-color: var(--color-accent2);
+  background: linear-gradient(135deg, var(--color-accent2) 0%, var(--color-terracotta) 100%);
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(194, 103, 79, 0.3);
 }
@@ -118,7 +127,7 @@
 .switchAuth {
   text-align: center;
   font-size: 0.9rem;
-  color: #666;
+  color: var(--color-primary);
   font-family: var(--font-primary);
 }
 
