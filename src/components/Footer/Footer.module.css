@@ -158,6 +158,15 @@
     justify-content: flex-start;
   }
 
+  .logo {
+  height: 60px;
+  width: 80px;
+  margin-bottom: 0.75rem;
+  margin-top: 0;
+  filter: drop-shadow(0 2px 4px rgba(93, 64, 55, 0.2));
+}
+
+
   .socialIcons a {
     width: 44px;
     height: 44px;

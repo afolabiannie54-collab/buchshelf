@@ -49,13 +49,37 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    const controller = new AbortController();
+    const { signal } = controller;
+    let isMounted = true;
+
     async function loadBooks() {
       setIsLoading(true);
       try {
+        // Phase 1: High priority rows (Visible "above the fold" or most important)
+        // Reduces initial burst from 13 requests to 3
+        const [featured, trending, newReleases] = await Promise.all([
+          getFeaturedBooks(signal),
+          getTrendingBooks(signal),
+          getNewReleaseBooks(signal),
+        ]);
+
+        if (!isMounted) return;
+
+        setFeaturedBooks(normalizeAndEnrichBooks(featured));
+        setTrendingBooks(normalizeAndEnrichBooks(trending));
+        setNewReleaseBooks(normalizeAndEnrichBooks(newReleases));
+
+        // Phase 1 complete - show content immediately
+        setIsLoading(false);
+
+        // Phase 2: Delayed load for the rest
+        // Wait 1.5 seconds to let API rate limits cool down
+        await new Promise((resolve) => setTimeout(resolve, 1500));
+
+        if (!isMounted || signal.aborted) return;
+
         const [
-          featured,
-          trending,
-          newReleases,
           popularFantasy,
           topNonFiction,
           cozyMystery,
@@ -65,26 +89,22 @@ export default function Home() {
           historicalFiction,
           psychologySelfHelp,
           biographyMemoir,
-          crimeThriller,
+          crimeThriller
         ] = await Promise.all([
-          getFeaturedBooks(),
-          getTrendingBooks(),
-          getNewReleaseBooks(),
-          getPopularFantasyBooks(),
-          getTopNonFictionBooks(),
-          getCozyMysteryBooks(),
-          getRomanceBestsellers(),
-          getClassicSciFiBooks(),
-          getYoungAdultHits(),
-          getHistoricalFictionBooks(),
-          getPsychologySelfHelpBooks(),
-          getBiographyMemoirBooks(),
-          getCrimeThrillerBooks(),
+          getPopularFantasyBooks(signal),
+          getTopNonFictionBooks(signal),
+          getCozyMysteryBooks(signal),
+          getRomanceBestsellers(signal),
+          getClassicSciFiBooks(signal),
+          getYoungAdultHits(signal),
+          getHistoricalFictionBooks(signal),
+          getPsychologySelfHelpBooks(signal),
+          getBiographyMemoirBooks(signal),
+          getCrimeThrillerBooks(signal),
         ]);
 
-        setFeaturedBooks(normalizeAndEnrichBooks(featured));
-        setTrendingBooks(normalizeAndEnrichBooks(trending));
-        setNewReleaseBooks(normalizeAndEnrichBooks(newReleases));
+        if (!isMounted) return;
+
         setPopularFantasyBooks(normalizeAndEnrichBooks(popularFantasy));
         setTopNonFictionBooks(normalizeAndEnrichBooks(topNonFiction));
         setCozyMysteryBooks(normalizeAndEnrichBooks(cozyMystery));
@@ -95,14 +115,20 @@ export default function Home() {
         setPsychologySelfHelpBooks(normalizeAndEnrichBooks(psychologySelfHelp));
         setBiographyMemoirBooks(normalizeAndEnrichBooks(biographyMemoir));
         setCrimeThrillerBooks(normalizeAndEnrichBooks(crimeThriller));
+
       } catch (error) {
+        if (!isMounted || error.name === 'AbortError') return;
         if (import.meta.env.DEV) console.error("Error loading books:", error);
-      } finally {
         setIsLoading(false);
       }
     }
 
     loadBooks();
+
+    return () => {
+      isMounted = false;
+      controller.abort();
+    }
   }, []);
 
   // Create skeleton arrays for loading
@@ -266,10 +292,10 @@ export default function Home() {
 function Hero({ isLoggedIn, user }) {
   return (
     <section className={styles.hero}>
-     
+
       <BookIllustration />
-      
-     
+
+
       <h1 className={styles.herotext}>
         {isLoggedIn
           ? `Hello, ${user?.username || "Reader"}! The books missed you.`
@@ -280,8 +306,8 @@ function Hero({ isLoggedIn, user }) {
           ? "The shelves have something new for you, dive back in!"
           : "A warm, quiet space to track your books and discover new ones."}
       </p>
-      
-     
+
+
       {!isLoggedIn ? (
         <div className={styles.herobtns}>
           <Link to="/login" className={`${styles.primarybtn} ${styles.btn}`}>

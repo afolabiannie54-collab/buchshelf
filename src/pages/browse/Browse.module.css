@@ -1,11 +1,9 @@
 .container {
   min-height: 100vh;
-  background: linear-gradient(
-    180deg,
-    var(--color-secondary) 0%,
-    var(--color-ivory) 40%,
-    var(--color-secondary) 100%
-  );
+  background: linear-gradient(180deg,
+      var(--color-secondary) 0%,
+      var(--color-ivory) 40%,
+      var(--color-secondary) 100%);
 }
 
 .header {
@@ -45,18 +43,16 @@
 .filterPanel {
   max-width: 1200px;
   margin: 0 auto 0;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.98) 0%,
-    rgba(253, 251, 247, 0.95) 100%
-  );
+  background: linear-gradient(135deg,
+      rgba(255, 255, 255, 0.98) 0%,
+      rgba(253, 251, 247, 0.95) 100%);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   padding: 2rem 2.5rem;
   border-radius: 20px 20px 0 0;
   border: 1px solid rgba(107, 142, 35, 0.2);
   border-bottom: none;
-  box-shadow: 
+  box-shadow:
     0 -8px 24px rgba(93, 64, 55, 0.12),
     inset 0 1px 0 rgba(255, 255, 255, 0.8);
   position: relative;
@@ -71,12 +67,10 @@
   transform: translateX(-50%);
   width: 60%;
   height: 3px;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    var(--color-accent1) 50%,
-    transparent 100%
-  );
+  background: linear-gradient(90deg,
+      transparent 0%,
+      var(--color-accent1) 50%,
+      transparent 100%);
   border-radius: 0 0 3px 3px;
 }
 
@@ -133,11 +127,9 @@
   user-select: none;
   padding: 0.75rem 1.25rem;
   border-radius: 10px;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.9) 0%,
-    rgba(247, 234, 215, 0.7) 100%
-  );
+  background: linear-gradient(135deg,
+      rgba(255, 255, 255, 0.9) 0%,
+      rgba(247, 234, 215, 0.7) 100%);
   border: 2px solid transparent;
   transition: all 0.3s ease;
   font-family: var(--font-primary);
@@ -154,11 +146,9 @@
 }
 
 .genreCheckbox:hover {
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(156, 175, 136, 0.12) 100%
-  );
+  background: linear-gradient(135deg,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(156, 175, 136, 0.12) 100%);
   border-color: var(--color-accent1);
   color: var(--color-chocolate);
   transform: translateY(-2px);
@@ -170,24 +160,26 @@
 }
 
 .genreCheckbox:has(input[type="checkbox"]:checked) {
-  background: linear-gradient(
-    135deg,
-    rgba(156, 175, 136, 0.15) 0%,
-    rgba(156, 175, 136, 0.08) 100%
-  );
+  background: linear-gradient(135deg,
+      rgba(156, 175, 136, 0.15) 0%,
+      rgba(156, 175, 136, 0.08) 100%);
   border-color: var(--color-accent1);
 }
 
-.genreCheckbox input[type="checkbox"]:checked + span {
+.genreCheckbox input[type="checkbox"]:checked+span {
   font-weight: 600;
   color: var(--color-accent1);
 }
 
 /* Books Section */
 .booksSection {
-   border-top: 1.5px solid var(--color-accent1);
+  display: flex;
+  flex-direction: column;
+  border-top: 1.5px solid var(--color-accent1);
   background-color: var(--color-ivory);
   padding: 3rem 2rem;
+  gap: 1rem;
+
   /* border-top: 1px solid rgba(93, 64, 55, 0.1); */
 }
 
@@ -207,11 +199,9 @@
 .emptyState {
   text-align: center;
   padding: 5rem 2rem;
-  background: linear-gradient(
-    135deg,
-    rgba(253, 251, 247, 0.9) 0%,
-    rgba(255, 245, 225, 0.9) 100%
-  );
+  background: linear-gradient(135deg,
+      rgba(253, 251, 247, 0.9) 0%,
+      rgba(255, 245, 225, 0.9) 100%);
   border-radius: 20px;
   max-width: 600px;
   margin: 2rem auto;
@@ -302,7 +292,6 @@
 
   .booksGrid {
     grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-    gap: 1rem;
   }
 
   .emptyState {

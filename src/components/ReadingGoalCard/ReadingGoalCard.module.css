@@ -1,6 +1,6 @@
 .card {
   background: var(--color-secondary);
-  border: 2px solid var(--color-peach);
+  border: 2px solid var(--color-accent2);
   border-radius: 12px;
   padding: 12px 16px;
   display: grid;
